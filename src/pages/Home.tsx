@@ -1,11 +1,12 @@
 import { data } from '../api/mock';
 import { Game } from '../components/Game';
+import * as Styled from './styles';
 
 console.log(data);
 
 export const Home = () => {
   return (
-    <div>
+    <Styled.Container>
       {data.map((game) => {
         return (
           <Game
@@ -18,6 +19,6 @@ export const Home = () => {
           />
         );
       })}
-    </div>
+    </Styled.Container>
   );
 };
