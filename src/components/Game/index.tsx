@@ -12,6 +12,7 @@ type GameProps = {
 export const Game = ({ id, name, price, score, image }: GameProps) => {
   return (
     <Styled.Container>
+      <img src={image} alt={name} />
       <ul>
         <li>{name}</li>
         <li>Score: {score}</li>
