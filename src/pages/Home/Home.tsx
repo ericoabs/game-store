@@ -1,5 +1,5 @@
-import { data } from '../api/mock';
-import { Game } from '../components/Game';
+import { data } from '../../api/mock';
+import { Game } from '../../components/Game';
 import * as Styled from './styles';
 
 console.log(data);
