@@ -16,3 +16,15 @@ export const Container = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
+
+export const SelectContainer = styled.span`
+  display: flex;
+  justify-content: end;
+  margin: 1rem;
+  font-size: 2rem;
+
+  select {
+    font-size: 1.6rem;
+    margin: 0 0.5rem;
+  }
+`;

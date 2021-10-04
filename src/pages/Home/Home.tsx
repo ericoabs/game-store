@@ -5,7 +5,7 @@ import * as Styled from './styles';
 export const Home = () => {
   return (
     <>
-      <span>
+      <Styled.SelectContainer>
         <label id="filter">Filtrar</label>
         <select name="filter" id="filter">
           <option value="" disabled defaultValue="Alphabetically">
@@ -24,7 +24,7 @@ export const Home = () => {
             Nota
           </option>
         </select>
-      </span>
+      </Styled.SelectContainer>
       <Styled.Container>
         {data.map((game) => {
           return (
