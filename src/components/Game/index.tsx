@@ -1,3 +1,4 @@
+import { useCart } from '../../hooks/cart';
 import { Button } from '../Button';
 import * as Styled from './styles';
 
@@ -9,16 +10,18 @@ export type GameProps = {
   image: string;
 };
 
-export const Game = ({ id, name, price, score, image }: GameProps) => {
+export const Game = (product: GameProps) => {
+  const { products, addToCart } = useCart();
+
   return (
     <Styled.Container>
-      <img src={image} alt={name} />
+      <img src={product.image} alt={product.name} />
       <ul>
-        <li>{name}</li>
-        <li>Score: {score}</li>
-        <li>R$: {price}</li>
+        <li>{product.name}</li>
+        <li>Score: {product.score}</li>
+        <li>R$: {product.price}</li>
         <li>
-          <Button>Comprar</Button>
+          <Button onClick={() => addToCart(product)}>Comprar</Button>
         </li>
       </ul>
     </Styled.Container>

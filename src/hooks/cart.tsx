@@ -27,18 +27,6 @@ const CartContext = createContext<CartContext | null>(null);
 const CartProvider: React.FC = ({ children }) => {
   const [products, setProducts] = useState<Product[]>([]);
 
-  useEffect(() => {
-    async function loadProducts(): Promise<void> {
-      const storage = localStorage.getItem('@GameStore:products');
-
-      if (storage) {
-        setProducts([...JSON.parse(storage)]);
-      }
-    }
-
-    loadProducts();
-  }, []);
-
   const increment = useCallback(
     async (id) => {
       const incrementedProducts = products.map((product) => {
@@ -54,8 +42,6 @@ const CartProvider: React.FC = ({ children }) => {
       });
 
       setProducts(incrementedProducts);
-
-      localStorage.setItem('@GameStore:products', JSON.stringify(products));
     },
     [products],
   );
@@ -75,8 +61,6 @@ const CartProvider: React.FC = ({ children }) => {
         });
 
       setProducts(decrementedProducts);
-
-      localStorage.setItem('@GameStore:products', JSON.stringify(products));
     },
     [products],
   );
@@ -91,11 +75,11 @@ const CartProvider: React.FC = ({ children }) => {
       }
 
       setProducts([...products, { ...product, amount: 1 }]);
-
-      localStorage.setItem('@GameStore:products', JSON.stringify(products));
     },
     [increment, products, setProducts],
   );
+
+  console.log(products);
 
   const value = React.useMemo(
     () => ({ addToCart, increment, decrement, products }),
