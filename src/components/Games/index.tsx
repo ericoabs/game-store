@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { data } from '../../api/mock';
-import { Button } from '../../components/Button';
 import { Game } from '../../components/Game';
 import { GameProps } from '../../components/Game';
 import { useCart } from '../../hooks/cart';
@@ -23,17 +22,28 @@ export const Games = () => {
           });
           setGamesData([...formattedData]);
           break;
+        case 'BiggerPrice':
+          formattedData = gamesData.sort((a, b) => {
+            return a.price > b.price ? -1 : 1;
+          });
+          setGamesData([...formattedData]);
+          break;
+        case 'Score':
+          formattedData = gamesData.sort((a, b) => {
+            return a.score > b.score ? -1 : 1;
+          });
+          setGamesData([...formattedData]);
+          break;
+        case 'Alphabetically':
+          formattedData = gamesData.sort((a, b) => {
+            return a.name.localeCompare(b.name);
+          });
+          setGamesData([...formattedData]);
+          break;
       }
     },
     [gamesData],
   );
-
-  const handleFilter = useCallback(() => {
-    const formattedData = gamesData.sort((a, b) => {
-      return a.price < b.price ? -1 : 1;
-    });
-    setGamesData(formattedData);
-  }, [gamesData]);
 
   return (
     <>
@@ -60,7 +70,6 @@ export const Games = () => {
             Nota
           </option>
         </select>
-        <Button onClick={handleFilter}>Filtro</Button>
       </Styled.SelectContainer>
       <Styled.Container>
         {gamesData.map((game) => {
