@@ -3,6 +3,7 @@ import { data } from '../../api/mock';
 import { Game } from '../../components/Game';
 import { GameProps } from '../../components/Game';
 import { useCart } from '../../hooks/cart';
+import { Menu } from '../Menu';
 import * as Styled from './styles';
 
 export const Games = () => {
@@ -47,6 +48,7 @@ export const Games = () => {
 
   return (
     <>
+      <Menu />
       <Styled.SelectContainer>
         <label id="filter">Filtrar</label>
         <select name="filter" id="filter" onChange={handleSelect}>
