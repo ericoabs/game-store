@@ -1,3 +1,5 @@
+import { GameProps } from '../components/Game';
+
 export const data = [
   {
     id: 312,
@@ -71,4 +73,4 @@ export const data = [
     image:
       'https://res.cloudinary.com/dvawcyisr/image/upload/v1624885660/horizon-zero-dawn_t887ex.png',
   },
-];
+] as GameProps[];

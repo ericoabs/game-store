@@ -1,7 +1,7 @@
 import { Button } from '../Button';
 import * as Styled from './styles';
 
-type GameProps = {
+export type GameProps = {
   id: number;
   name: string;
   price: number;
