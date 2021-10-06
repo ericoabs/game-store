@@ -1,6 +1,7 @@
 # Teste de desenvolvimento para a Supera
 
-Página desenvolvida como parte do desafio técnico da Supera.
+Página desenvolvida como parte do desafio técnico da Supera. A aplicação pode ser vista [Aqui](https://boring-darwin-b2e0df.netlify.app/)
+
 
 <p align="center">
   <img src="https://res.cloudinary.com/dvawcyisr/image/upload/v1633548561/Captura_de_tela_de_2021-10-06_16-27-25_fkmp2d.png" alt="Size Limit CLI" width="738">
