@@ -4,6 +4,7 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useMemo,
 } from 'react';
 
 interface Product {
@@ -26,6 +27,8 @@ const CartContext = createContext<CartContext | null>(null);
 
 const CartProvider: React.FC = ({ children }) => {
   const [products, setProducts] = useState<Product[]>([]);
+
+  const productsTotal = useMemo(() => products.length, [products]);
 
   const increment = useCallback(
     async (id) => {

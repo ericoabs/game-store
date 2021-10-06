@@ -7,10 +7,17 @@ export const Container = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 1.5rem;
-  text-decoration: none;
   border-bottom: 1px solid #835afd;
-  img {
-    height: 6.1rem;
-    width: 9.2rem;
+
+  > a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+
+    > span {
+      margin-left: 0.5rem;
+    }
   }
 `;

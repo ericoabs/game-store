@@ -9,7 +9,7 @@ import * as Styled from './styles';
 export const Games = () => {
   const [gamesData, setGamesData] = useState<GameProps[]>(data);
 
-  const { products, addToCart } = useCart();
+  // const { products, addToCart } = useCart();
 
   const handleSelect = useCallback(
     (event) => {
