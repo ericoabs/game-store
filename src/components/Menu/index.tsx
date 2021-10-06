@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/cart';
 import { BsCartFill } from 'react-icons/bs';
 import logo from '../../assets/logo.svg';
+import { useMemo } from 'react';
 
 export function Menu() {
   const { products } = useCart();
 
-  let amount = 0;
-
-  products.map((product) => {
-    amount += product.amount;
-  });
+  const amount = useMemo(() => {
+    return products.reduce((sum, item) => {
+      return (sum += item.amount);
+    }, 0);
+  }, [products]);
 
   return (
     <Styled.Container>

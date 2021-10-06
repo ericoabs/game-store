@@ -38,11 +38,11 @@ export function Cart() {
     loadItems();
   }, [loadItems]);
 
-  let amount = 0;
-
-  products.map((product) => {
-    amount += product.amount;
-  });
+  const amount = useMemo(() => {
+    return items.reduce((sum, item) => {
+      return (sum += item.amount);
+    }, 0);
+  }, [items]);
 
   return (
     <>
