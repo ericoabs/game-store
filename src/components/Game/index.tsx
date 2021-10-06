@@ -11,7 +11,7 @@ export type GameProps = {
 };
 
 export const Game = (product: GameProps) => {
-  const { products, addToCart } = useCart();
+  const { addToCart } = useCart();
 
   return (
     <Styled.Container>

@@ -12,7 +12,6 @@ export function Menu() {
     amount += product.amount;
   });
 
-  console.log(amount);
   return (
     <Styled.Container>
       <Link to="/cart">

@@ -19,8 +19,6 @@ export function Cart() {
   const [items, setItems] = useState<GameType[]>([]);
   const { products, increment, decrement } = useCart();
 
-  console.log(products);
-
   const loadItems = useCallback(() => {
     setItems(products);
   }, [products]);

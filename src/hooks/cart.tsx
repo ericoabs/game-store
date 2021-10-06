@@ -1,11 +1,4 @@
-import React, {
-  createContext,
-  useState,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-} from 'react';
+import React, { createContext, useState, useCallback, useContext } from 'react';
 
 interface Product {
   id: number;
@@ -27,8 +20,6 @@ const CartContext = createContext<CartContext | null>(null);
 
 const CartProvider: React.FC = ({ children }) => {
   const [products, setProducts] = useState<Product[]>([]);
-
-  const productsTotal = useMemo(() => products.length, [products]);
 
   const increment = useCallback(
     async (id) => {
@@ -81,8 +72,6 @@ const CartProvider: React.FC = ({ children }) => {
     },
     [increment, products, setProducts],
   );
-
-  console.log(products);
 
   const value = React.useMemo(
     () => ({ addToCart, increment, decrement, products }),

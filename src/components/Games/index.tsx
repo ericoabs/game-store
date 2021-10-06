@@ -2,14 +2,11 @@ import { useCallback, useState } from 'react';
 import { data } from '../../api/mock';
 import { Game } from '../../components/Game';
 import { GameProps } from '../../components/Game';
-import { useCart } from '../../hooks/cart';
 import { Menu } from '../Menu';
 import * as Styled from './styles';
 
 export const Games = () => {
   const [gamesData, setGamesData] = useState<GameProps[]>(data);
-
-  // const { products, addToCart } = useCart();
 
   const handleSelect = useCallback(
     (event) => {
