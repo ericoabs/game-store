@@ -38,13 +38,19 @@ export function Cart() {
     loadItems();
   }, [loadItems]);
 
+  let amount = 0;
+
+  products.map((product) => {
+    amount += product.amount;
+  });
+
   return (
     <>
       <Menu />
       <Styled.Container>
         {items.map((game) => {
           return (
-            <div key={game.id}>
+            <Styled.GameContainer key={game.id}>
               <p>{game.name}</p>
               <img src={game.image} alt={game.name} />
               <p>Nota: {game.score}</p>
@@ -74,16 +80,32 @@ export function Cart() {
                 }).format(game.price)}
                 )
               </p>
-            </div>
+            </Styled.GameContainer>
           );
         })}
-        <Styled.Total>
-          Total:{' '}
-          {new Intl.NumberFormat('pt-br', {
-            style: 'currency',
-            currency: 'BRL',
-          }).format(cartTotal)}
-        </Styled.Total>
+        <Styled.TextContainer>
+          <Styled.Text>
+            Frete:{' '}
+            {new Intl.NumberFormat('pt-br', {
+              style: 'currency',
+              currency: 'BRL',
+            }).format(cartTotal > 250 ? 0 : amount * 10)}
+          </Styled.Text>
+          <Styled.Text>
+            Subtotal:{' '}
+            {new Intl.NumberFormat('pt-br', {
+              style: 'currency',
+              currency: 'BRL',
+            }).format(cartTotal)}
+          </Styled.Text>
+          <Styled.Text>
+            Total:{' '}
+            {new Intl.NumberFormat('pt-br', {
+              style: 'currency',
+              currency: 'BRL',
+            }).format(cartTotal > 250 ? cartTotal : cartTotal + amount * 10)}
+          </Styled.Text>
+        </Styled.TextContainer>
       </Styled.Container>
     </>
   );

@@ -8,14 +8,6 @@ export const Container = styled.div`
   padding: 1rem;
   font-weight: 400;
 
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.34);
-    border-radius: 0.6rem;
-  }
-
   button {
     & + button {
       margin: 1rem;
@@ -46,11 +38,23 @@ export const Container = styled.div`
   }
 `;
 
-export const Total = styled.p`
+export const GameContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.34);
+  border-radius: 0.6rem;
+`;
+
+export const TextContainer = styled.div`
+  box-shadow: 2px 4px 15px rgba(131, 90, 253, 0.9);
+`;
+
+export const Text = styled.p`
+  width: 100%;
   align-items: center;
   font-size: 2rem;
   font-family: 700;
-  box-shadow: 2px 4px 15px rgba(131, 90, 253, 0.9);
 `;
 
 export const Ammount = styled.p`
