@@ -10,8 +10,9 @@ export const Container = styled.div`
   border-radius: 0.6rem;
 
   img {
-    width: 100%;
-    height: 32rem;
+    width: 24rem;
+    height: 24rem;
+    margin: 2rem 0;
   }
   ul {
     display: flex;

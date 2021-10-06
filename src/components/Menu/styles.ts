@@ -16,6 +16,11 @@ export const Container = styled.nav`
     font-size: 2.5rem;
     padding: 0.5rem;
 
+    &:hover {
+      transition: all 0.3s;
+      filter: brightness(0.8);
+    }
+
     > span {
       margin-left: 0.5rem;
     }

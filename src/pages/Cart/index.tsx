@@ -5,6 +5,7 @@ import { BsPlus } from 'react-icons/bs';
 import { HiMinus } from 'react-icons/hi';
 
 import * as Styled from './styles';
+import { Menu } from '../../components/Menu';
 
 interface GameType {
   id: number;
@@ -39,6 +40,7 @@ export function Cart() {
 
   return (
     <>
+      <Menu />
       <Styled.Container>
         {items.map((game) => {
           return (
@@ -46,7 +48,7 @@ export function Cart() {
               <p>{game.name}</p>
               <img src={game.image} alt={game.name} />
               <p>Nota: {game.score}</p>
-              <p className="quantidade">
+              <Styled.Ammount>
                 Quantidade:
                 <Button className="remover" onClick={() => decrement(game.id)}>
                   <HiMinus />
@@ -58,7 +60,7 @@ export function Cart() {
                 >
                   <BsPlus size={20} />
                 </Button>
-              </p>
+              </Styled.Ammount>
               <p>
                 Total:{' '}
                 {new Intl.NumberFormat('pt-br', {
@@ -75,13 +77,13 @@ export function Cart() {
             </div>
           );
         })}
-        <p className="total">
+        <Styled.Total>
           Total:{' '}
           {new Intl.NumberFormat('pt-br', {
             style: 'currency',
             currency: 'BRL',
           }).format(cartTotal)}
-        </p>
+        </Styled.Total>
       </Styled.Container>
     </>
   );
